@@ -34,17 +34,17 @@ Another way of having a file compiled with Sass is including as file with .scss 
 
 E.g. in your response :
 
-`$this->addCSSLink($gJConfig->urlengine['basePath'].'themes/'.$gJConfig->theme.'/Css/style.sass');`
+`$this->addCSSLink(jApp::config()->urlengine['basePath'].'themes/'.jApp::config()->theme.'/Css/style.sass');`
 
 or
 
-`$this->addCSSLink($gJConfig->urlengine['basePath'].'themes/'.$gJConfig->theme.'/Css/style.sassFile', array( 'sass' => true ));`
+`$this->addCSSLink(jApp::config()->urlengine['basePath'].'themes/'.jApp::config()->theme.'/Css/style.sassFile', array( 'sass' => true ));`
 
 
 Your config file must activate jSass plugin :
 
     [jResponseHtml]
-    plugins=jSass
+    CSSprepro_plugins[]=jSass
 
 N.B. : the directories containing Sass files should be writable by your web server ! Indeed, compiled files will be written in that very same directory so that relative urls go on working ...
 
