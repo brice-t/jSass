@@ -83,7 +83,7 @@ class jSassCSSpreproPlugin implements ICSSpreproPlugin {
 
 
         $sassProcessArgs = array_map( 'escapeshellarg', $sassProcessArgs );
-        $sassProcessCmd = $this->sassPath . ' ' . implode(' ', $sassProcessArgs);
+        $sassProcessCmd = $this->sassPath . ' ' . implode(' ', $sassProcessArgs) . ' 2>&1';
 
         exec( $sassProcessCmd, $sassProcessOutput, $code );
 
